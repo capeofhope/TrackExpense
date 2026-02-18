@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getExpenses } from '../api/client';
+import { getExpenses, API_BASE_URL } from '../api/client';
 
 const ExpenseList = ({ refreshTrigger }) => {
     const [expenses, setExpenses] = useState([]);
@@ -103,7 +103,7 @@ const ExpenseList = ({ refreshTrigger }) => {
                                             </span>
                                             {expense.receipt && (
                                                 <a
-                                                    href={`http://localhost:3001/${expense.receipt}`}
+                                                    href={`${API_BASE_URL}/${expense.receipt}`}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="inline-flex items-center text-xs text-green-500 hover:text-green-400 gap-1 opacity-0 group-hover:opacity-100 transition-opacity"
